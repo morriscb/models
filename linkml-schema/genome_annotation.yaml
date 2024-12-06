@@ -58,6 +58,12 @@ classes:
         any_of:
           - range: genome assembly
           - range: string
+      gene annotations:
+        description: The gene annotations that are part of this genome annotation.
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: gene annotation
 
   genome assembly:
     is_a: named thing
@@ -72,10 +78,6 @@ classes:
   annotation collection:
     tree_root: true
     attributes:
-      annotations:
-        multivalued: true
-        inlined_as_list: true
-        range: gene annotation
       genome_annotations:
         multivalued: true
         inlined_as_list: true
