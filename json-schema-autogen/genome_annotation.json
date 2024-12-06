@@ -84,12 +84,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "annotations": {
-                    "items": {
-                        "$ref": "#/$defs/GeneAnnotation"
-                    },
-                    "type": "array"
-                },
                 "genome_annotations": {
                     "items": {
                         "$ref": "#/$defs/GenomeAnnotation"
@@ -760,6 +754,13 @@
                     "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
+                "gene_annotations": {
+                    "description": "The gene annotations that are part of this genome annotation.",
+                    "items": {
+                        "$ref": "#/$defs/GeneAnnotation"
+                    },
+                    "type": "array"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -839,6 +840,7 @@
             },
             "required": [
                 "reference_assembly",
+                "gene_annotations",
                 "id"
             ],
             "title": "GenomeAnnotation",
@@ -1383,12 +1385,6 @@
     "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
-        "annotations": {
-            "items": {
-                "$ref": "#/$defs/GeneAnnotation"
-            },
-            "type": "array"
-        },
         "genome_annotations": {
             "items": {
                 "$ref": "#/$defs/GenomeAnnotation"
