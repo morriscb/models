@@ -32,9 +32,7 @@ classes:
         description: The genome annotation that this gene annotation was referenced from.
         required: true
         inlined: true
-        any_of:
-          - range: genome annotation
-          - range: string
+        range: genome annotation
     id_prefixes:
       - ENSEMBL
       - MGI
@@ -55,9 +53,7 @@ classes:
         description: The reference genome assembly that this genome annotation was created from.
         required: true
         inlined: true
-        any_of:
-          - range: genome assembly
-          - range: string
+        range: genome assembly
 
   genome assembly:
     is_a: named thing
@@ -68,6 +64,12 @@ classes:
     slots:
       - version
       - strain
+    attributes:
+      organism taxon:
+        description: The reference organism taxon that this genome annotation was created on.
+        required: true
+        inlined: true
+        range: organism taxon
 
   annotation collection:
     tree_root: true
@@ -76,14 +78,7 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: gene annotation
-      genome_annotations:
-        multivalued: true
-        inlined_as_list: true
-        range: genome annotation
-      genome_assemblies:
-        multivalued: true
-        inlined_as_list: true
-        range: genome assembly
+
 
 
 slots:
