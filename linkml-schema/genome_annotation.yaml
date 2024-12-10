@@ -28,13 +28,18 @@ classes:
       - molecular type
       - source id
     attributes:
-      referenced in: 
-        description: The genome annotation that this gene annotation was referenced from.
+      genome annotation:
         required: true
         inlined: true
-        any_of:
-          - range: genome annotation
-          - range: string
+        range: genome annotation
+      genome assembly:
+        required: true
+        inlined: true
+        range: genome assembly
+      organism taxon:
+        required: true
+        inlined: true
+        range: organism taxon
     id_prefixes:
       - ENSEMBL
       - MGI
@@ -72,18 +77,10 @@ classes:
   annotation collection:
     tree_root: true
     attributes:
-      annotations:
+      gene annotations:
         multivalued: true
         inlined_as_list: true
         range: gene annotation
-      genome_annotations:
-        multivalued: true
-        inlined_as_list: true
-        range: genome annotation
-      genome_assemblies:
-        multivalued: true
-        inlined_as_list: true
-        range: genome assembly
 
 
 slots:

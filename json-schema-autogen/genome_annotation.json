@@ -84,21 +84,9 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "annotations": {
+                "gene_annotations": {
                     "items": {
                         "$ref": "#/$defs/GeneAnnotation"
-                    },
-                    "type": "array"
-                },
-                "genome_annotations": {
-                    "items": {
-                        "$ref": "#/$defs/GenomeAnnotation"
-                    },
-                    "type": "array"
-                },
-                "genome_assemblies": {
-                    "items": {
-                        "$ref": "#/$defs/GenomeAssembly"
                     },
                     "type": "array"
                 }
@@ -513,6 +501,12 @@
                     "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
+                "genome_annotation": {
+                    "$ref": "#/$defs/GenomeAnnotation"
+                },
+                "genome_assembly": {
+                    "$ref": "#/$defs/GenomeAssembly"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -558,24 +552,15 @@
                     "description": "A human-readable name for an attribute or entity.",
                     "type": "string"
                 },
+                "organism_taxon": {
+                    "$ref": "#/$defs/OrganismTaxon"
+                },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
-                },
-                "referenced_in": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "The genome annotation that this gene annotation was referenced from.",
-                    "type": "string"
                 },
                 "source_id": {
                     "description": "The authority specific identifier.",
@@ -607,7 +592,9 @@
                 }
             },
             "required": [
-                "referenced_in",
+                "genome_annotation",
+                "genome_assembly",
+                "organism_taxon",
                 "id"
             ],
             "title": "GeneAnnotation",
@@ -1383,21 +1370,9 @@
     "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
-        "annotations": {
+        "gene_annotations": {
             "items": {
                 "$ref": "#/$defs/GeneAnnotation"
-            },
-            "type": "array"
-        },
-        "genome_annotations": {
-            "items": {
-                "$ref": "#/$defs/GenomeAnnotation"
-            },
-            "type": "array"
-        },
-        "genome_assemblies": {
-            "items": {
-                "$ref": "#/$defs/GenomeAssembly"
             },
             "type": "array"
         }
