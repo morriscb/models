@@ -78,6 +78,10 @@ classes:
   annotation collection:
     tree_root: true
     attributes:
+      organism_taxon:
+        inlined_as_list: true
+        multivalued: true
+        range: organism taxon
       genome_annotations:
         multivalued: true
         inlined_as_list: true

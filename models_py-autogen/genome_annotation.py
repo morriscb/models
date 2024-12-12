@@ -6384,6 +6384,7 @@ class AnnotationCollection(ConfiguredBaseModel):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://identifiers.org/brain-bican/genome-annotation-schema',
          'tree_root': True})
 
+    organism_taxon: Optional[List[OrganismTaxon]] = Field(default_factory=list, json_schema_extra = { "linkml_meta": {'alias': 'organism_taxon', 'domain_of': ['annotation collection']} })
     genome_annotations: Optional[List[GenomeAnnotation]] = Field(default_factory=list, json_schema_extra = { "linkml_meta": {'alias': 'genome_annotations', 'domain_of': ['annotation collection']} })
     genome_assemblies: Optional[List[GenomeAssembly]] = Field(default_factory=list, json_schema_extra = { "linkml_meta": {'alias': 'genome_assemblies', 'domain_of': ['annotation collection']} })
 
