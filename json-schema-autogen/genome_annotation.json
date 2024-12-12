@@ -95,6 +95,12 @@
                         "$ref": "#/$defs/GenomeAssembly"
                     },
                     "type": "array"
+                },
+                "organism_taxon": {
+                    "items": {
+                        "$ref": "#/$defs/OrganismTaxon"
+                    },
+                    "type": "array"
                 }
             },
             "title": "AnnotationCollection",
@@ -1394,6 +1400,12 @@
         "genome_assemblies": {
             "items": {
                 "$ref": "#/$defs/GenomeAssembly"
+            },
+            "type": "array"
+        },
+        "organism_taxon": {
+            "items": {
+                "$ref": "#/$defs/OrganismTaxon"
             },
             "type": "array"
         }
